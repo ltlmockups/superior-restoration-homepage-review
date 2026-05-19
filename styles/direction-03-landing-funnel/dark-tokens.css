@@ -1,0 +1,46 @@
+/* Direction 3 · C25 Landing-Funnel · DARK MODE TOKENS
+   Modern · inverted register · single-action funnel
+*/
+
+:root[data-mode="dark"] {
+  --color-primary:        #5F90DA;
+  --color-primary-mid:    #1A487D;
+  --color-primary-dk:     #5F90DA;
+  --color-accent:         #1A487D;
+  --color-accent-soft:    #1A2A44;
+
+  --color-bg:             #0E1B2E;
+  --color-bg-soft:        #142640;
+  --color-bg-deep:        #07101C;
+  --color-bg-hero:        #07101C;
+  --color-ink:            #FFFFFF;
+  --color-ink-on-deep:    #FFFFFF;
+  --color-ink-mute:       #B8C4D4;
+  --color-line:           #1F3454;
+
+  --color-emergency:      #FF6B6B;
+  --color-emergency-hover:#FF4F4F;
+  --color-success:        #4ADE80;
+
+  --section-y-mobile:     3.5rem;
+  --section-y-desktop:    5.5rem;
+  --section-x:            clamp(1.5rem, 4vw, 3rem);
+
+  --container-default:    1140px;
+  --container-narrow:     720px;
+  --container-funnel:     520px;
+
+  --space-xxs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-xxl: 3rem;
+  --space-3xl: 4rem;
+
+  --font-heading: 'Inter', 'Arial', sans-serif;
+  --font-body:    'Inter', 'Arial', 'Helvetica Neue', sans-serif;
+
+  --ease-emph:   cubic-bezier(0.2, 0.7, 0.2, 1);
+}

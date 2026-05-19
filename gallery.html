@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--
+  Superior Restoration · Gallery · 3-direction comparison
+  Per .claude/rules/output-refactor.md Rule 1 (3 directions narrowed for client review)
+  Per .claude/rules/client-facing-neutrality.md (no flagship framing, no platform mentions)
+-->
+<html lang="en" data-mode="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Superior Restoration · Direction Gallery</title>
+  <meta name="description" content="Three homepage directions for Superior Restoration. Pick the one that feels right.">
+  <link rel="canonical" href="https://ltlmockups.github.io/superior-restoration-homepage-review/gallery.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap">
+
+  <style>
+    :root[data-mode="light"] {
+      --color-primary: #1A487D;
+      --color-primary-dk: #1478A0;
+      --color-primary-mid: #2B5672;
+      --color-bg: #FFFFFF;
+      --color-bg-soft: #F4F7FB;
+      --color-bg-deep: #0E1B2E;
+      --color-ink: #0E1B2E;
+      --color-ink-mute: #555;
+      --color-line: #E1E7EF;
+    }
+    :root[data-mode="dark"] {
+      --color-primary: #5F90DA;
+      --color-primary-dk: #5F90DA;
+      --color-primary-mid: #1A487D;
+      --color-bg: #0E1B2E;
+      --color-bg-soft: #142640;
+      --color-bg-deep: #07101C;
+      --color-ink: #FFFFFF;
+      --color-ink-mute: #B8C4D4;
+      --color-line: #1F3454;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-ink);
+      line-height: 1.6;
+      transition: background 200ms ease, color 200ms ease;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: var(--color-primary-dk); text-decoration: none; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-line);
+      padding: 1rem 0;
+    }
+    .site-header__inner {
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .site-header__inner img { height: 44px; width: auto; }
+    .site-header__inner h1 {
+      font-size: 0.9375rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 auto 0 0;
+      color: var(--color-ink-mute);
+    }
+    .mode-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid var(--color-line);
+      color: var(--color-ink);
+      font-size: 1.125rem;
+      cursor: pointer;
+    }
+    .mode-toggle:hover { background: var(--color-bg-soft); }
+
+    /* Hero intro */
+    .gallery-hero {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      text-align: center;
+      background: var(--color-bg-soft);
+      border-bottom: 1px solid var(--color-line);
+    }
+    .gallery-hero .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary-dk);
+      margin-bottom: 1rem;
+    }
+    .gallery-hero h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.875rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin: 0 0 1rem;
+      letter-spacing: -0.015em;
+    }
+    .gallery-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 1.3vw, 1.125rem);
+      color: var(--color-ink-mute);
+      line-height: 1.6;
+    }
+
+    /* Direction grid */
+    .gallery-grid {
+      padding: clamp(3rem, 5vw, 4rem) 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    }
+
+    .direction-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-bg);
+      border: 1px solid var(--color-line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    }
+    .direction-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(14,27,46,0.10);
+      border-color: var(--color-primary);
+    }
+    .direction-card__preview {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: var(--color-bg-soft);
+    }
+    .direction-card__preview iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 1440px;
+      height: 900px;
+      transform: scale(calc(100% / 1440 * 580));
+      transform-origin: top left;
+      border: 0;
+      pointer-events: none;
+    }
+    @media (min-width: 900px) {
+      .direction-card__preview iframe {
+        transform: scale(0.27);
+      }
+    }
+    .direction-card__body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .direction-card__num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary-dk);
+      margin-bottom: 0.5rem;
+    }
+    .direction-card__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.01em;
+      color: var(--color-ink);
+    }
+    .direction-card__tag {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-ink-mute);
+      margin-bottom: 1rem;
+    }
+    .direction-card__lead {
+      font-size: 0.9375rem;
+      color: var(--color-ink-mute);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .direction-card__attrs {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+    .direction-card__attrs li {
+      font-size: 0.8125rem;
+      color: var(--color-ink-mute);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .direction-card__attrs li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+    .direction-card__cta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.25rem;
+      min-height: 44px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 200ms ease;
+    }
+    .btn-primary { background: var(--color-primary); color: #fff; }
+    .btn-primary:hover { background: var(--color-primary-mid); }
+    .btn-outline { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+    .btn-outline:hover { background: var(--color-primary); color: #fff; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--color-bg-deep);
+      color: rgba(255,255,255,0.85);
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.8125rem;
+    }
+    .site-footer img { height: 40px; width: auto; margin: 0 auto 0.75rem; }
+    .site-footer p { margin: 0; opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <img src="Logos/superior-restoration-logo-color.png" alt="Superior Restoration" id="header-logo">
+      <h1>Homepage Direction Review</h1>
+      <button class="mode-toggle" type="button" aria-label="Toggle light or dark mode" onclick="toggleMode()">◐</button>
+    </div>
+  </header>
+
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="eyebrow">Three directions · Your pick</span>
+      <h2>Pick the homepage that feels like Superior Restoration.</h2>
+      <p>Three distinct treatments of the same brand, the same six services, the same Calgary 24/7 positioning. Compare side by side. Each carries a light and a dark variant. Whichever feels right becomes the production direction.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="gallery-grid">
+
+      <!-- Direction 1 -->
+      <article class="direction-card">
+        <div class="direction-card__preview">
+          <iframe src="styles/direction-01-fullscreen-hero/light.html" loading="lazy" title="Direction 1 preview" tabindex="-1"></iframe>
+        </div>
+        <div class="direction-card__body">
+          <div class="direction-card__num">Direction 01</div>
+          <h3 class="direction-card__title">Full-Screen Hero</h3>
+          <span class="direction-card__tag">Cinematic · Video-led · Emergency-First</span>
+          <p class="direction-card__lead">Full-bleed video hero conveys urgency and scale. Optimized for the homeowner mid-disaster who wants help on the way NOW. Phone CTA dominates above the fold.</p>
+          <ul class="direction-card__attrs">
+            <li>Hero: full-bleed video loop</li>
+            <li>Buyer fit: homeowner mid-disaster</li>
+            <li>Tone: urgent, cinematic, action-first</li>
+          </ul>
+          <div class="direction-card__cta">
+            <a href="styles/direction-01-fullscreen-hero/light.html" class="btn btn-primary">View light</a>
+            <a href="styles/direction-01-fullscreen-hero/dark.html" class="btn btn-outline">View dark</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Direction 2 -->
+      <article class="direction-card">
+        <div class="direction-card__preview">
+          <iframe src="styles/direction-02-corporate-professional/light.html" loading="lazy" title="Direction 2 preview" tabindex="-1"></iframe>
+        </div>
+        <div class="direction-card__body">
+          <div class="direction-card__num">Direction 02</div>
+          <h3 class="direction-card__title">Corporate / Professional</h3>
+          <span class="direction-card__tag">Editorial · Institutional · Credential-Heavy</span>
+          <p class="direction-card__lead">Split-hero with a contractor portrait left, headline + inline form right. Editorial serif headlines signal authority. Built for the insurance adjuster vetting vendors and the property manager onboarding partners.</p>
+          <ul class="direction-card__attrs">
+            <li>Hero: split portrait + inline form</li>
+            <li>Buyer fit: insurance adjuster, property manager</li>
+            <li>Tone: institutional, methodical, documentation-discipline</li>
+          </ul>
+          <div class="direction-card__cta">
+            <a href="styles/direction-02-corporate-professional/light.html" class="btn btn-primary">View light</a>
+            <a href="styles/direction-02-corporate-professional/dark.html" class="btn btn-outline">View dark</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Direction 3 -->
+      <article class="direction-card">
+        <div class="direction-card__preview">
+          <iframe src="styles/direction-03-landing-funnel/light.html" loading="lazy" title="Direction 3 preview" tabindex="-1"></iframe>
+        </div>
+        <div class="direction-card__body">
+          <div class="direction-card__num">Direction 03</div>
+          <h3 class="direction-card__title">Landing Funnel</h3>
+          <span class="direction-card__tag">Modern · Compressed · One-Action</span>
+          <p class="direction-card__lead">Compressed hero with the quote form prominent above fold. Single-scroll conversion path. Optimized for mobile-first Google Ads traffic and broad-funnel quick conversion.</p>
+          <ul class="direction-card__attrs">
+            <li>Hero: compressed copy + quote form prominent</li>
+            <li>Buyer fit: mobile-first quick converters · ad traffic</li>
+            <li>Tone: modern, fast, single-action</li>
+          </ul>
+          <div class="direction-card__cta">
+            <a href="styles/direction-03-landing-funnel/light.html" class="btn btn-primary">View light</a>
+            <a href="styles/direction-03-landing-funnel/dark.html" class="btn btn-outline">View dark</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="Logos/superior-restoration-logo-white.png" alt="Superior Restoration" id="footer-logo">
+      <p>Homepage direction review · 2026 · Calgary, Alberta</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      const root = document.documentElement;
+      const current = root.getAttribute('data-mode') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-mode', next);
+      localStorage.setItem('sr-gallery-mode', next);
+      // Swap logo
+      document.getElementById('header-logo').src = next === 'dark'
+        ? 'Logos/superior-restoration-logo-white.png'
+        : 'Logos/superior-restoration-logo-color.png';
+    }
+    (function(){
+      const saved = localStorage.getItem('sr-gallery-mode');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-mode', 'dark');
+        document.getElementById('header-logo').src = 'Logos/superior-restoration-logo-white.png';
+      }
+    })();
+  </script>
+
+</body>
+</html>

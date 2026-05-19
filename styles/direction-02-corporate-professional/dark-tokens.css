@@ -1,0 +1,48 @@
+/* Direction 2 · Corporate/Professional · DARK MODE TOKENS
+   Editorial · institutional · inverted register
+*/
+
+:root[data-mode="dark"] {
+  --color-primary:        #5F90DA;
+  --color-primary-mid:    #1A487D;
+  --color-primary-dk:     #5F90DA;
+  --color-accent:         #1A487D;
+
+  --color-bg:             #0E1B2E;
+  --color-bg-soft:        #142640;
+  --color-bg-cream:       #1A2A44;   /* dark version of cream LEFT panel */
+  --color-bg-cream-deep:  #233453;
+  --color-bg-deep:        #07101C;
+  --color-ink:            #FFFFFF;
+  --color-ink-on-deep:    #FFFFFF;
+  --color-ink-mute:       #B8C4D4;
+  --color-line:           #1F3454;
+  --color-line-cream:     #2A436A;
+
+  --color-emergency:      #FF6B6B;
+  --color-emergency-hover:#FF4F4F;
+  --color-success:        #4ADE80;
+
+  --hero-scrim:           linear-gradient(135deg, rgba(14,27,46,0.90) 0%, rgba(14,27,46,0.74) 55%, rgba(14,27,46,0.48) 100%);
+
+  --section-y-mobile:     4rem;
+  --section-y-desktop:    7rem;
+  --section-x:            clamp(1.5rem, 4vw, 3rem);
+
+  --container-default:    1200px;
+  --container-narrow:     720px;
+
+  --space-xxs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-xxl: 3rem;
+  --space-3xl: 4rem;
+
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body:    'Inter', 'Arial', 'Helvetica Neue', sans-serif;
+
+  --ease-emph:   cubic-bezier(0.2, 0.7, 0.2, 1);
+}

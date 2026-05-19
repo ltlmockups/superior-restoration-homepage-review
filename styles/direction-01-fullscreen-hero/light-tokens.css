@@ -1,0 +1,57 @@
+/* Direction 1 · Full-Screen Hero · LIGHT MODE TOKENS
+   Per clients/ltl/superior-restoration/STYLE-GUIDE.md Section 1
+   WCAG 2.1 AA compliant — primary-dk (#1478A0) used for text-on-white (4.97:1).
+*/
+
+:root[data-mode="light"] {
+  /* FILL tokens — backgrounds, decorative fills, SVG strokes */
+  --color-primary:        #1A487D;
+  --color-primary-mid:    #2B5672;
+  --color-accent:         #5F90DA;
+
+  /* TEXT tokens — links, eyebrows, captions on white */
+  --color-primary-dk:     #1478A0;
+
+  /* Neutral tokens */
+  --color-bg:             #FFFFFF;
+  --color-bg-soft:        #F4F7FB;   /* alt section bg */
+  --color-bg-deep:        #0E1B2E;   /* inverted dark sections inside light mode (e.g., proof) */
+  --color-ink:            #000000;
+  --color-ink-on-deep:    #FFFFFF;
+  --color-ink-mute:       #555555;
+  --color-line:           #E1E7EF;
+
+  /* Functional tokens — accent = logo orange (per STYLE-GUIDE.md §4) */
+  --color-emergency:      #E85D1A;
+  --color-emergency-hover:#C44A12;
+  --color-success:        #1E7E34;
+
+  /* Hero overlay (dark scrim over video for text legibility) */
+  --hero-overlay:         linear-gradient(180deg, rgba(14,27,46,0.55) 0%, rgba(14,27,46,0.75) 70%, rgba(14,27,46,0.85) 100%);
+
+  /* Section padding (per .claude/rules/spacing-discipline.md) */
+  --section-y-mobile:     4rem;
+  --section-y-desktop:    7rem;
+  --section-x:            clamp(1.5rem, 4vw, 3rem);
+
+  /* Container widths */
+  --container-default:    1200px;
+  --container-narrow:     720px;
+
+  /* Spacing scale */
+  --space-xxs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-xxl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Type */
+  --font-heading: 'Montserrat', 'Arial', sans-serif;
+  --font-body:    'Arial', 'Helvetica Neue', sans-serif;
+
+  /* Easing */
+  --ease-emph:   cubic-bezier(0.2, 0.7, 0.2, 1);
+}

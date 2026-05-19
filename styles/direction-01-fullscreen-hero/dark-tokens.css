@@ -1,0 +1,57 @@
+/* Direction 1 · Full-Screen Hero · DARK MODE TOKENS
+   Per clients/ltl/superior-restoration/STYLE-GUIDE.md Section 1
+   Inverted register — deep navy bg, light text, sky accent moves to primary.
+*/
+
+:root[data-mode="dark"] {
+  /* FILL tokens (inverted) */
+  --color-primary:        #5F90DA;   /* sky accent becomes primary on dark */
+  --color-primary-mid:    #1A487D;
+  --color-accent:         #1A487D;   /* navy becomes decorative on dark */
+
+  /* TEXT tokens */
+  --color-primary-dk:     #5F90DA;   /* light sky reads on deep navy bg */
+
+  /* Neutral tokens */
+  --color-bg:             #0E1B2E;   /* deep navy primary surface */
+  --color-bg-soft:        #142640;   /* alt section bg */
+  --color-bg-deep:        #07101C;   /* deeper sections (inverted from light's deep-on-white) */
+  --color-ink:            #FFFFFF;
+  --color-ink-on-deep:    #FFFFFF;
+  --color-ink-mute:       #B8C4D4;
+  --color-line:           #1F3454;
+
+  /* Functional — accent = logo orange brightened for dark bg, keeps 4.5:1+ */
+  --color-emergency:      #F47A3A;
+  --color-emergency-hover:#E66427;
+  --color-success:        #4ADE80;
+
+  /* Hero overlay (lighter scrim on dark register — video is darker subject) */
+  --hero-overlay:         linear-gradient(180deg, rgba(7,16,28,0.45) 0%, rgba(7,16,28,0.70) 70%, rgba(7,16,28,0.85) 100%);
+
+  /* Section padding (shared with light) */
+  --section-y-mobile:     4rem;
+  --section-y-desktop:    7rem;
+  --section-x:            clamp(1.5rem, 4vw, 3rem);
+
+  /* Container widths */
+  --container-default:    1200px;
+  --container-narrow:     720px;
+
+  /* Spacing scale */
+  --space-xxs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-xxl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Type */
+  --font-heading: 'Montserrat', 'Arial', sans-serif;
+  --font-body:    'Arial', 'Helvetica Neue', sans-serif;
+
+  /* Easing */
+  --ease-emph:   cubic-bezier(0.2, 0.7, 0.2, 1);
+}
