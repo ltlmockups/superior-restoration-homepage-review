@@ -391,13 +391,14 @@ section {
   line-height: 1.55;
 }
 
-/* ---------- Atmospheric image bands (between sections) ---------- */
+/* ---------- Atmospheric image bands (between sections) — parallax + cinematic ---------- */
 .image-band {
   position: relative;
   width: 100%;
-  height: clamp(260px, 32vw, 440px);
+  height: clamp(420px, 55vw, 680px);
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;  /* parallax effect on desktop */
   overflow: hidden;
 }
 .image-band::after {
@@ -405,15 +406,26 @@ section {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(0,0,0,0.04) 0%,
-    rgba(0,0,0,0) 35%,
-    rgba(0,0,0,0) 65%,
-    rgba(0,0,0,0.08) 100%);
+    rgba(0,0,0,0.06) 0%,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0) 70%,
+    rgba(0,0,0,0.10) 100%);
   pointer-events: none;
 }
 .image-band--water  { background-image: url('../../Images/d01-inline-water.jpg'); }
 .image-band--mold   { background-image: url('../../Images/d01-inline-mold.jpg'); }
 .image-band--thermal{ background-image: url('../../Images/d01-inline-thermal.jpg'); }
+
+/* iOS Safari + most mobile browsers don't support background-attachment: fixed reliably.
+   Fall back to scrolling background on touch/mobile, keep taller height for visual presence. */
+@media (max-width: 1024px), (hover: none) {
+  .image-band { background-attachment: scroll; height: clamp(360px, 48vw, 520px); }
+}
+
+/* Honor prefers-reduced-motion — disable parallax */
+@media (prefers-reduced-motion: reduce) {
+  .image-band { background-attachment: scroll; }
+}
 
 /* ---------- SECTION 3: PROOF (Sonic Boom reversal — proof before solution) ---------- */
 .proof {
