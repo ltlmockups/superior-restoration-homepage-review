@@ -26,6 +26,15 @@
   --color-emergency-hover:#C44A12;
   --color-success:        #1E7E34;
 
+  /* Hero form-card tokens (mode-aware contrast) */
+  --form-card-bg:         rgba(255,255,255,0.97);
+  --form-card-text:       var(--color-ink);
+  --form-card-mute:       var(--color-ink-mute);
+  --form-input-bg:        #FFFFFF;
+  --form-input-text:      var(--color-ink);
+  --form-input-border:    var(--color-line);
+  --form-shadow:          0 24px 60px rgba(0,0,0,0.40);
+
   /* Hero overlay (dark scrim over video for text legibility) */
   --hero-overlay:         linear-gradient(180deg, rgba(14,27,46,0.55) 0%, rgba(14,27,46,0.75) 70%, rgba(14,27,46,0.85) 100%);
 

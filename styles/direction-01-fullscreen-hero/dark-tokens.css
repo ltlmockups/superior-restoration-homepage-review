@@ -26,6 +26,15 @@
   --color-emergency-hover:#E66427;
   --color-success:        #4ADE80;
 
+  /* Hero form-card tokens (mode-aware contrast) */
+  --form-card-bg:         rgba(20,38,64,0.92);     /* navy card on dark hero · readable */
+  --form-card-text:       #FFFFFF;
+  --form-card-mute:       #B8C4D4;
+  --form-input-bg:        rgba(7,16,28,0.85);      /* deeper navy field bg */
+  --form-input-text:      #FFFFFF;
+  --form-input-border:    rgba(255,255,255,0.18);
+  --form-shadow:          0 24px 60px rgba(0,0,0,0.55);
+
   /* Hero overlay (lighter scrim on dark register — video is darker subject) */
   --hero-overlay:         linear-gradient(180deg, rgba(7,16,28,0.45) 0%, rgba(7,16,28,0.70) 70%, rgba(7,16,28,0.85) 100%);
 
